@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майбутні дедлайни</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" ><span class="rzhad">Rzhad</span><span class="bids">le</span></a>
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="disciplines.html">Мої дисципліни</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="grades.html">Оцінки</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Моя статистика</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="deadline.html">Майбутні дедлайни</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#" id="notification-icon"
+                ><span class="fa fa-bell"></span
+            ></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">Профіль</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.html">
+                  <span class="fa fa-sign-out-alt"></span>
+                </a>
+              </li>
+        </ul>
+        </div>
+    </div>
+</header>
+<div class="notification-popup" id="notification-popup">
+    <button class="btn btn-primary btn-sm" id="close-notification-btn" style="position: absolute; top: 5px; right: 5px;">
+      <span class="fa fa-times"></span>
+    </button>
+    <h4>Нещодавні повідомлення</h4>
+  <ul id="recent-notifications"></ul>
+  <button class="btn btn-primary btn-sm" id="view-all-notifications-btn">
+    Переглянути всі повідомлення
+  </button>
+</div>
+<div class="container">
+    <div class="deadline-card">
+        <div class="card-header text-center">
+            <h1>Майбутні дедлайни</h1>
+        </div>
+        <div class="card-body">
+            <div id="deadlines">
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 University Portal</p>
+  </footer>
+<script src="scripts/deadline.js"></script>
+<script src="scripts/notification.js"></script>
+
+</body>
+</html>

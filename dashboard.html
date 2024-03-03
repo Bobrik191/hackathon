@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" ><span class="rzhad">Rzhad</span><span class="bids">le</span></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="disciplines.html">Мої дисципліни</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="grades.html">Оцінки</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Моя статистика</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="deadline.html">Майбутні дедлайни</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="notification-icon"
+                  ><span class="fa fa-bell"></span
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">Профіль</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="logout.html">
+                  <span class="fa fa-sign-out-alt"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="notification-popup" id="notification-popup">
+        <button class="btn btn-primary btn-sm" id="close-notification-btn" style="position: absolute; top: 5px; right: 5px;">
+          <span class="fa fa-times"></span>
+        </button>
+        <h4>Нещодавні повідомлення</h4>
+      <ul id="recent-notifications"></ul>
+      <button class="btn btn-primary btn-sm" id="view-all-notifications-btn">
+        Переглянути всі повідомлення
+      </button>
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Статистика студента</h5>
+                </div>
+                <div class="card-body">
+                    <div class="stat-item">
+                        <div class="container">
+                            <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="rose-tab" data-toggle="tab" href="#rose" role="tab" aria-controls="rose" aria-selected="true">Радар</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="bar-tab" data-toggle="tab" href="#bar" role="tab" aria-controls="bar" aria-selected="false">Стовпчаста</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-3" id="myTabContent">
+                                <div class="tab-pane fade show active" id="rose" role="tabpanel" aria-labelledby="rose-tab">
+                                    <div class="stat-item">
+                                        <h6>Загальні курси</h6>
+                                        <canvas id="radarChart" width="200" height="200"></canvas>
+                                        <script src="scripts/pie_diagram.js"></script>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="bar" role="tabpanel" aria-labelledby="bar-tab">
+                                    <div class="stat-item">
+                                        <h6>Завершені курси</h6>
+                                        <canvas id="barChart" width="400" height="400"></canvas>
+                                        <script src="scripts/bar_chart.js"></script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <script>
+                        $('#myTab a').on('click', function (e) {
+                          e.preventDefault()
+                          $(this).tab('show')
+                        })
+                        </script>
+                    </div>
+                    <div class="stat-item">
+                        <h6>Середній бал</h6>
+                        <p>87,56</p>
+                    </div>
+                    <div class="stat-item">
+                        <h6>Наступаючі дедлайни</h6>
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Нещодавня активність</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Завершив курс "Advanced Mathematics"</li>
+                        <li>Прикріпив завдання в курсі "Physics"</li>
+                        <li>Запланував зустріч з керівником</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 University Portal</p>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="scripts/notification.js"></script>
+</body>
+</html>

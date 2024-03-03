@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Disciplines</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><span class="rzhad">Rzhad</span><span class="bids">le</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="disciplines.html">Мої дисципліни</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="grades.html">Оцінки</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Моя статистика</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="deadline.html">Майбутні дедлайни</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="notification-icon"
+                ><span class="fa fa-bell"></span
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Профіль</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.html">
+                <span class="fa fa-sign-out-alt"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="notification-popup" id="notification-popup">
+      <button
+        class="btn btn-primary btn-sm"
+        id="close-notification-btn"
+        style="position: absolute; top: 5px; right: 5px"
+      >
+        <span class="fa fa-times"></span>
+      </button>
+      <h4>Нещодавні повідомлення</h4>
+      <ul id="recent-notifications"></ul>
+      <button class="btn btn-primary btn-sm" id="view-all-notifications-btn">
+        Переглянути всі повідомлення
+      </button>
+    </div>
+    <div class="container">
+      <h5 class="mt-3 mb-3">Мої дисципліни</h5>
+      <div class="row">
+          <div class="col-lg-4">
+              <a href="discipline.html" class="card mb-3">
+                  <div class="card-header">
+                      <h5 class="card-title">Математика</h5>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Професор: Бебров</p>
+                      <p class="card-text">Кредитів: 3</p>
+                  </div>
+              </a>
+          </div>
+          <div class="col-lg-4">
+              <a href="discipline.html" class="card mb-3">
+                  <div class="card-header">
+                      <h5 class="card-title">Фізика</h5>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">Професор: Вякін</p>
+                      <p class="card-text">Кредитів: 4</p>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+    <footer>
+      <p>&copy; 2024 University Portal</p>
+    </footer>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="scripts/notification.js"></script>
+</html>
